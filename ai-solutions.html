@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Solutions for Startups & Enterprises | 1nestep</title>
+<meta name="description" content="AI & machine learning solutions by 1nestep. We build intelligent systems, automation, and data-driven products for startups, SaaS, and enterprises.">
+
+<link rel="canonical" href="https://yourdomain.com/ai-solutions.html">
+
+<style>
+/* ================= BASE ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#0a0a0a;
+  color:#fff;
+  line-height:1.85;
+}
+section{padding:160px 20px;position:relative;z-index:1}
+.container{max-width:1450px;margin:auto}
+h1,h2,h3{color:#00aaff}
+h1{font-size:3.8rem;margin-bottom:24px}
+h2{font-size:3rem;margin-bottom:20px}
+h3{font-size:1.7rem;margin-bottom:12px}
+p{font-size:1.15rem;color:#dcdcdc;margin-bottom:18px}
+ul{padding-left:18px}
+li{margin-bottom:12px}
+
+/* ================= NAVBAR ================= */
+/* ===== Navbar ===== */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  transition:all .3s ease;
+}
+
+nav.shrink{
+  padding:10px 40px;
+  background:rgba(0,0,0,0.85);
+}
+
+nav .logo img{
+  height:80px;
+  width:auto;
+  display:block;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+
+nav ul li a{
+  font-size:1.1rem;
+  transition:color .3s;
+}
+
+nav ul li a:hover{
+  color:#00aaff;
+}
+
+.menu-toggle{
+  display:none;
+  font-size:1.6rem;
+  cursor:pointer;
+}
+
+/* ===== Mobile Navbar ===== */
+@media (max-width:768px){
+  nav ul{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,0.95);
+    flex-direction:column;
+    align-items:center;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+
+  nav ul.show{
+    max-height:300px;
+    padding:20px 0;
+  }
+
+  .menu-toggle{
+    display:block;
+    color:#fff;
+  }
+
+  .logo img{
+    content:url("images/1nestep2.png");
+    height:32px;
+  }
+}
+
+.logo img{height:80px}
+nav ul{list-style:none;display:flex;gap:30px}
+nav ul li a{color:#fff;text-decoration:none}
+nav ul li a:hover{color:#00aaff}
+.menu-toggle{display:none}
+
+/* ================= BUTTONS ================= */
+button{
+  background:#00aaff;
+  color:#000;
+  border:none;
+  padding:16px 36px;
+  border-radius:10px;
+  font-size:1.05rem;
+  cursor:pointer;
+}
+button.secondary{
+  background:#000;
+  color:#00aaff;
+  border:1px solid #00aaff;
+}
+
+/* ================= HERO ================= */
+.ai-hero{
+  padding-top:220px;
+}
+.ai-hero h1{
+  max-width:1000px;
+}
+.ai-hero p{
+  max-width:900px;
+}
+
+/* ================= AI CAPABILITIES (STACKED FLOW) ================= */
+.capability-flow{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+}
+.capability-block{
+  background:rgba(255,255,255,0.06);
+  padding:48px;
+  border-radius:22px;
+  border-left:5px solid #00aaff;
+}
+
+/* ================= USE CASE STRIP ================= */
+.usecase-strip{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:50px;
+}
+.usecase{
+  padding-top:30px;
+  border-top:1px solid rgba(255,255,255,0.15);
+}
+/* =========================
+   SCROLLABLE USE CASE STRIP
+   ========================= */
+
+.usecase-strip{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 360px;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+}
+
+.usecase{
+  scroll-snap-align: start;
+  padding-top: 32px;
+  border-top: 2px solid rgba(255,255,255,0.15);
+}
+
+/* Hide scrollbar (clean look) */
+.usecase-strip::-webkit-scrollbar{
+  height: 6px;
+}
+.usecase-strip::-webkit-scrollbar-thumb{
+  background: rgba(0,170,255,0.6);
+  border-radius: 10px;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px){
+  .usecase-strip{
+    grid-auto-columns: 85%;
+  }
+}
+
+
+/* ================= SYSTEM PIPELINE ================= */
+.pipeline{
+  display:grid;
+  gap:26px;
+}
+.pipeline-step{
+  background:rgba(0,170,255,0.08);
+  padding:32px;
+  border-radius:18px;
+}
+/* =========================
+   SCROLLABLE AI PIPELINE
+   ========================= */
+
+.pipeline{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 360px;
+  gap: 32px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 20px;
+}
+
+/* Individual steps */
+.pipeline-step{
+  scroll-snap-align: start;
+  background: rgba(0,170,255,0.08);
+  padding: 36px;
+  border-radius: 20px;
+  border-left: 4px solid #00aaff;
+  min-height: 220px;
+}
+
+/* Hide scrollbar (optional but premium) */
+.pipeline::-webkit-scrollbar{
+  height: 6px;
+}
+.pipeline::-webkit-scrollbar-thumb{
+  background: rgba(0,170,255,0.6);
+  border-radius: 10px;
+}
+
+/* Mobile refinement */
+@media (max-width: 768px){
+  .pipeline{
+    grid-auto-columns: 85%;
+  }
+}
+
+
+/* ================= TRUST SECTION ================= */
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:60px;
+}
+
+/* ================= CTA ================= */
+.cta{
+  background:linear-gradient(135deg,#00aaff,#0077cc);
+}
+.cta h2,.cta p{color:#000}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#2f2f2f;
+  padding:80px 30px 30px;
+}
+.footer-bottom{
+  text-align:center;
+  margin-top:40px;
+  font-size:.85rem;
+  color:#ccc;
+}
+
+/* ================= PARTICLES ================= */
+#particles-js{
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  h1{font-size:2.4rem}
+  h2{font-size:2rem}
+  .capability-flow,
+  .usecase-strip,
+  .trust-grid{
+    grid-template-columns:1fr;
+  }
+}
+/* =========================
+   AI vs AUTOMATION
+   ========================= */
+
+.ai-vs-automation{
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0) 0%,
+    rgba(0,170,255,0.05) 100%
+  );
+}
+
+.compare-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  margin-top:60px;
+}
+
+.compare-box{
+  background:rgba(255,255,255,0.06);
+  padding:48px;
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,0.1);
+}
+
+.compare-box h3{
+  font-size:1.9rem;
+  margin-bottom:18px;
+}
+
+.compare-box.ai{
+  border-left:6px solid #00aaff;
+}
+
+.compare-box.automation{
+  border-left:6px solid #00d5ff;
+}
+
+.compare-box p{
+  max-width:780px;
+}
+
+.compare-box ul{
+  margin-top:18px;
+}
+
+.compare-box li{
+  margin-bottom:12px;
+  font-size:1.05rem;
+}
+
+.compare-footer{
+  margin-top:80px;
+  max-width:900px;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+@media(max-width:900px){
+  .compare-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+
+  .compare-box{
+    padding:32px;
+  }
+}
+/* =========================
+   GLOBAL SIZE ENHANCEMENT
+   ========================= */
+@media (min-width: 1200px){
+
+  section{
+    padding-top: 220px;
+    padding-bottom: 220px;
+  }
+
+  .container{
+    max-width: 1600px;
+  }
+
+  p{
+    font-size: 1.22rem;
+    line-height: 2;
+  }
+
+  h1{
+    font-size: 4.4rem;
+  }
+
+  h2{
+    font-size: 3.4rem;
+  }
+
+  h3{
+    font-size: 2rem;
+  }
+
+}
+@media (min-width: 1200px){
+  .ai-hero{
+    padding-top: 280px;
+    padding-bottom: 260px;
+  }
+
+  .ai-hero p{
+    max-width: 1100px;
+  }
+}
+/* =========================
+   SOLID GREY MEGA FOOTER
+   ========================= */
+.mega-footer{
+  position:relative;
+  z-index:2;
+  background:#2f2f2f;
+  color:#ffffff;
+  padding:80px 30px 30px;
+}
+
+/* Layout */
+.footer-top{
+  max-width:1300px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr 1fr;
+  gap:50px;
+}
+
+/* Brand */
+.footer-brand img{
+  height:42px;
+  margin-bottom:16px;
+}
+
+.footer-brand p{
+  font-size:0.95rem;
+  line-height:1.7;
+  color:#e6e6e6;
+}
+
+/* Social Icons */
+.footer-socials{
+  display:flex;
+  gap:14px;
+  margin-top:18px;
+}
+
+.footer-socials a{
+  color:#ffffff;
+  font-size:1.2rem;
+  transition:0.25s ease;
+}
+
+.footer-socials a:hover{
+  color:#00aaff;
+  transform:translateY(-3px);
+}
+
+/* Columns */
+.footer-col h4{
+  font-size:1.05rem;
+  margin-bottom:16px;
+}
+
+.footer-col a{
+  display:block;
+  margin-bottom:10px;
+  font-size:0.95rem;
+  color:#e6e6e6;
+  transition:0.25s ease;
+}
+
+.footer-col a:hover{
+  color:#00aaff;
+  transform:translateX(4px);
+}
+
+/* CTA */
+.footer-cta h3{
+  font-size:1.6rem;
+  margin-bottom:18px;
+}
+
+.cta-link{
+  display:block;
+  margin-bottom:12px;
+  font-size:1rem;
+  font-weight:600;
+}
+
+.cta-link:hover{
+  color:#00aaff;
+}
+
+/* Newsletter */
+.newsletter p{
+  margin:20px 0 10px;
+  font-weight:600;
+}
+
+.newsletter-box{
+  display:flex;
+  border-radius:8px;
+  overflow:hidden;
+  background:#1f1f1f;
+}
+
+.newsletter-box input{
+  flex:1;
+  border:none;
+  padding:12px;
+  background:#1f1f1f;
+  color:#ffffff;
+}
+
+.newsletter-box button{
+  background:#00aaff;
+  border:none;
+  padding:0 18px;
+  cursor:pointer;
+}
+
+/* Bottom Bar */
+.footer-bottom{
+  margin-top:50px;
+  padding-top:15px;
+  border-top:1px solid #444;
+  text-align:center;
+  font-size:0.85rem;
+  color:#cccccc;
+}
+
+/* Mobile */
+@media (max-width:900px){
+  .footer-top{
+    grid-template-columns:1fr;
+    gap:40px;
+    text-align:center;
+  }
+
+  .footer-socials{
+    justify-content:center;
+  }
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<div id="particles-js"></div>
+
+<!-- NAV -->
+<!-- Navbar -->
+<nav id="navbar">
+  <div class="logo">
+    <img src="images/1nestep.png" alt="1nestep Logo">
+  </div>
+
+  <div class="menu-toggle">&#9776;</div>
+
+  <ul>
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#explore">Explore</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#enroll">Enroll</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- HERO -->
+<section class="ai-hero">
+  <div class="container">
+    <h1>AI Solutions That Turn Data Into Decisions</h1>
+    <p>
+      At 1nestep, we design and engineer intelligent systems that help businesses
+      automate workflows, extract insights from data, and build AI-powered products
+      that scale responsibly.
+    </p>
+    <p>
+      Our AI solutions are built with a strong focus on reliability, explainability,
+      and long-term maintainability — not just experimentation.
+    </p>
+
+    <button onclick="location.href='index.html#contact'">
+      Talk to AI Experts
+    </button>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section>
+  <div class="container capability-flow">
+
+    <!-- MACHINE LEARNING SYSTEMS -->
+    <div class="capability-block">
+      <h3>Machine Learning Systems</h3>
+
+      <p>
+        We design and deploy production-grade machine learning systems that go
+        far beyond experimentation. Our focus is on building models that operate
+        reliably in real-world environments, integrate with existing software,
+        and continue delivering value as data patterns evolve.
+      </p>
+
+      <p>
+        In multiple engagements, we’ve helped teams move from disconnected
+        notebooks and proof-of-concept models to fully operational ML pipelines
+        — complete with data validation, versioned models, monitoring, and
+        controlled retraining workflows.
+      </p>
+
+      <ul>
+        <li>Supervised & unsupervised learning for real-world data</li>
+        <li>Predictive analytics, forecasting & behavioral modeling</li>
+        <li>Feature engineering & data quality validation</li>
+        <li>Model monitoring, drift detection & retraining pipelines</li>
+        <li>Explainability, evaluation metrics & audit readiness</li>
+      </ul>
+
+      <p>
+        This approach ensures machine learning systems remain accurate,
+        maintainable, and aligned with business objectives — not just technically
+        impressive.
+      </p>
+    </div>
+
+    <!-- AI POWERED AUTOMATION -->
+    <div class="capability-block">
+      <h3>AI-Powered Automation</h3>
+
+      <p>
+        Automation becomes significantly more powerful when combined with
+        intelligence. We build AI-assisted automation systems that streamline
+        complex workflows, reduce operational overhead, and improve decision
+        quality without sacrificing reliability.
+      </p>
+
+      <p>
+        Rather than applying AI everywhere, we carefully identify decision points
+        where learning-based systems provide measurable value, while keeping
+        deterministic automation in place for stability and control.
+      </p>
+
+      <ul>
+        <li>Document processing & intelligent data extraction</li>
+        <li>AI-assisted decision support systems</li>
+        <li>Workflow orchestration & system integration</li>
+        <li>Operational optimization & exception handling</li>
+        <li>Hybrid AI + rule-based automation architectures</li>
+      </ul>
+
+      <p>
+        The result is automation that scales efficiently, remains explainable,
+        and adapts as operational complexity grows.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section>
+  <div class="container">
+    <h2>AI Use Cases We Deliver</h2>
+
+    <p>
+      We focus on practical, production-ready AI use cases that solve real
+      business problems. Each system is designed to integrate seamlessly
+      with existing products, workflows, and data infrastructure.
+    </p>
+
+    <div class="usecase-strip">
+
+      <div class="usecase">
+        <h3>Intelligent Dashboards</h3>
+        <p>
+          We build data-driven dashboards powered by machine learning models
+          that surface insights in real time — helping teams track performance,
+          identify trends, and make faster, more informed decisions.
+        </p>
+        <p>
+          These systems often combine predictive analytics with traditional
+          reporting to provide both context and foresight.
+        </p>
+      </div>
+
+      <div class="usecase">
+        <h3>Recommendation Engines</h3>
+        <p>
+          Personalized recommendation systems for products, content, and
+          workflows based on user behavior, historical data, and contextual
+          signals.
+        </p>
+        <p>
+          We design these engines to evolve continuously while maintaining
+          transparency and control over outcomes.
+        </p>
+      </div>
+
+      <div class="usecase">
+        <h3>Chatbots & Virtual Assistants</h3>
+        <p>
+          Conversational AI systems for customer support, onboarding,
+          and internal knowledge access — designed with clear escalation
+          paths and human oversight.
+        </p>
+        <p>
+          These assistants reduce operational load while improving
+          response consistency and availability.
+        </p>
+      </div>
+
+      <div class="usecase">
+        <h3>Predictive Analytics & Forecasting</h3>
+        <p>
+          Forecasting systems that help teams anticipate demand, user churn,
+          operational risk, or system load using historical and real-time data.
+        </p>
+        <p>
+          Models are monitored continuously to ensure predictions remain
+          accurate as business conditions change.
+        </p>
+      </div>
+
+      <div class="usecase">
+        <h3>Process Intelligence & Optimization</h3>
+        <p>
+          AI-driven analysis of operational workflows to identify bottlenecks,
+          inefficiencies, and opportunities for automation or optimization.
+        </p>
+        <p>
+          These systems often combine rule-based automation with targeted
+          machine learning for maximum reliability.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- PIPELINE -->
+<section>
+  <div class="container">
+    <h2>Our AI Delivery Pipeline</h2>
+
+    <p>
+      We follow a structured, production-focused AI delivery pipeline that ensures
+      systems are reliable, explainable, and scalable — not just accurate in
+      isolated testing environments.
+    </p>
+
+    <div class="pipeline">
+
+      <div class="pipeline-step">
+        <strong>1. Data Collection & Quality Assessment</strong><br><br>
+        We evaluate data sources, consistency, completeness, and bias.
+        Poor data quality is one of the most common causes of AI failure,
+        and we address it before modeling begins.
+      </div>
+
+      <div class="pipeline-step">
+        <strong>2. Feature Engineering & Data Preparation</strong><br><br>
+        Raw data is transformed into meaningful features through cleaning,
+        normalization, enrichment, and validation pipelines designed
+        for long-term maintainability.
+      </div>
+
+      <div class="pipeline-step">
+        <strong>3. Model Selection & Architecture Design</strong><br><br>
+        We select appropriate algorithms and architectures based on the
+        business problem — balancing accuracy, interpretability, and
+        operational complexity.
+      </div>
+
+      <div class="pipeline-step">
+        <strong>4. Training, Evaluation & Explainability</strong><br><br>
+        Models are trained and evaluated using relevant metrics,
+        cross-validation strategies, and explainability techniques
+        to ensure trustworthy outputs.
+      </div>
+
+      <div class="pipeline-step">
+        <strong>5. Deployment & System Integration</strong><br><br>
+        AI models are deployed as scalable services and integrated
+        with existing applications, APIs, and workflows without
+        disrupting system stability.
+      </div>
+
+      <div class="pipeline-step">
+        <strong>6. Monitoring, Retraining & Optimization</strong><br><br>
+        We continuously monitor performance, detect data drift,
+        manage retraining cycles, and optimize systems as usage
+        patterns and requirements evolve.
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- TRUST -->
+<section>
+  <div class="container trust-grid">
+
+    <!-- LEFT CONTENT -->
+    <div>
+      <h2>Responsible & Scalable AI</h2>
+
+      <p>
+        Building AI systems is not just a technical challenge — it is a
+        responsibility. Decisions made by intelligent systems can impact
+        users, operations, and business outcomes in meaningful ways.
+      </p>
+
+      <p>
+        At 1nestep, we prioritize explainability, fairness, and long-term
+        stability when designing AI-driven products. Our goal is to ensure
+        systems remain understandable, controllable, and aligned with both
+        business objectives and ethical standards.
+      </p>
+
+      <p>
+        Rather than treating responsibility as an afterthought, we embed it
+        directly into system architecture, model evaluation, and operational
+        workflows from the earliest stages of development.
+      </p>
+    </div>
+
+    <!-- RIGHT LIST -->
+    <div>
+      <ul>
+        <li>
+          Secure data handling, access controls & regulatory awareness
+        </li>
+        <li>
+          Explainable, auditable models with transparent decision logic
+        </li>
+        <li>
+          Bias identification, monitoring & mitigation strategies
+        </li>
+        <li>
+          Scalable, cloud-native deployment architectures
+        </li>
+        <li>
+          Continuous monitoring, retraining & performance validation
+        </li>
+        <li>
+          Long-term AI system maintenance & governance planning
+        </li>
+      </ul>
+
+      <p style="margin-top:32px">
+        This approach enables organizations to scale AI adoption confidently,
+        knowing that systems will remain reliable, compliant, and adaptable
+        as data, users, and regulations evolve.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="ai-vs-automation">
+  <div class="container">
+
+    <h2>AI vs Automation: Choosing the Right Approach</h2>
+
+    <p>
+      One of the most common questions we hear from founders and engineering teams is
+      whether they actually need artificial intelligence — or if a well-designed
+      automation system would solve the problem more effectively.
+    </p>
+
+    <p>
+      At 1nestep, we help teams make this distinction early, avoiding unnecessary
+      complexity while ensuring long-term scalability.
+    </p>
+
+    <div class="compare-grid">
+
+      <!-- AI -->
+      <div class="compare-box ai">
+        <h3>When AI Makes Sense</h3>
+
+        <p>
+          AI is most effective when systems must learn from data, adapt to changing
+          patterns, or make predictions where rules alone are insufficient.
+        </p>
+
+        <ul>
+          <li>Pattern recognition across large datasets</li>
+          <li>Prediction, forecasting & personalization</li>
+          <li>Natural language processing & vision tasks</li>
+          <li>Dynamic decision-making under uncertainty</li>
+          <li>Use cases where behavior evolves over time</li>
+        </ul>
+
+        <p>
+          In these scenarios, machine learning models can continuously improve
+          outcomes as more data becomes available.
+        </p>
+      </div>
+
+      <!-- AUTOMATION -->
+      <div class="compare-box automation">
+        <h3>When Automation Is the Better Choice</h3>
+
+        <p>
+          Automation excels when processes are well-defined, repeatable, and governed
+          by clear business rules.
+        </p>
+
+        <ul>
+          <li>Workflow orchestration & system integrations</li>
+          <li>Rule-based decision systems</li>
+          <li>Scheduled jobs & data synchronization</li>
+          <li>Compliance-driven processes</li>
+          <li>High reliability with predictable outcomes</li>
+        </ul>
+
+        <p>
+          In many cases, robust automation delivers faster results with lower cost
+          and simpler maintenance than AI-based solutions.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="compare-footer">
+      <p>
+        In practice, many successful systems combine both approaches — using automation
+        for stability and control, and AI where learning and adaptation provide a
+        measurable advantage.
+      </p>
+
+      <p>
+        Our role is to design architectures where AI and automation complement each
+        other, ensuring systems remain reliable, explainable, and scalable.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>Build AI That Creates Real Impact</h2>
+    <p>
+      Partner with 1nestep to design, deploy, and scale intelligent systems.
+    </p>
+
+    <button onclick="location.href='index.html#contact'">
+      Start AI Project
+    </button>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="site-footer" class="mega-footer">
+
+  <div class="footer-top">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <img src="images/1nestep.png" alt="1nestep Logo">
+      <p>
+        Built with ❤️ in India for the world.  
+        We help startups build scalable, future-ready tech.
+      </p>
+
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- Products -->
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="#">Web Development</a>
+      <a href="#">Mobile Apps</a>
+      <a href="#">AI Solutions</a>
+      <a href="#">SaaS Platforms</a>
+      <a href="#">Automation</a>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#">Startup MVP</a>
+      <a href="#">UI/UX Design</a>
+      <a href="#">Cloud & DevOps</a>
+      <a href="#">System Architecture</a>
+      <a href="#">Maintenance</a>
+    </div>
+
+    <!-- Learn -->
+    <div class="footer-col">
+      <h4>Learn</h4>
+      <a href="#">Articles</a>
+      <a href="#">Case Studies</a>
+      <a href="#">Tech Blogs</a>
+      <a href="#">Workshops</a>
+    </div>
+
+    <!-- Company -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Careers</a>
+      <a href="#">Life at 1nestep</a>
+      <a href="#">FAQs</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <!-- CTA + Newsletter -->
+    <div class="footer-cta">
+      <h3>We’re Hiring 🚀</h3>
+      <a href="#" class="cta-link">Contact Us ↗</a>
+      <a href="#" class="cta-link">Share Your Startup Idea ↗</a>
+
+      <div class="newsletter">
+        <p>Stay Updated</p>
+        <div class="newsletter-box">
+          <input type="email" placeholder="Subscribe to our newsletter">
+          <button>➤</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025 1nestep & Co. All Rights Reserved.</p>
+  </div>
+
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+particlesJS("particles-js",{
+  particles:{
+    number:{value:60},
+    color:{value:"#00d5ff"},
+    size:{value:3},
+    line_linked:{enable:true,color:"#00d5ff",opacity:.4},
+    move:{speed:2}
+  }
+});
+</script>
+<script>
+/* Navbar shrink on scroll */
+const navbar = document.getElementById('navbar');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    navbar.classList.add('shrink');
+  } else {
+    navbar.classList.remove('shrink');
+  }
+});
+
+/* Mobile menu toggle */
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('nav ul');
+
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+</script>
+<script>
+const footer = document.getElementById("site-footer");
+
+function setParticlesOpacity(value){
+  if (window.pJSDom && window.pJSDom.length) {
+    const pJS = window.pJSDom[0].pJS;
+    pJS.particles.opacity.value = value;
+    pJS.particles.line_linked.opacity = value;
+  }
+}
+
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    if (entry.isIntersecting) {
+      setParticlesOpacity(0);
+    } else {
+      setParticlesOpacity(0.5);
+    }
+  },
+  { threshold: 0.1 }
+);
+
+observer.observe(footer);
+</script>
+
+
+
+</body>
+</html>

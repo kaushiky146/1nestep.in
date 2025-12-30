@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technology | 1nestep & Co.</title>
+
+<style>
+/* ===== Base ===== */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#0a0a0a;
+  color:#fff;
+  line-height:1.6;
+  
+  padding-top:120px; /* adjust if needed */
+
+
+}
+h1,h2,h3{font-weight:700}
+p{color:#ccc}
+button{
+  background:#00aaff;
+  color:#fff;
+  border:none;
+  padding:14px 26px;
+  border-radius:10px;
+  font-size:1rem;
+  cursor:pointer;
+  transition:.3s;
+}
+button:hover{background:#008ecc;transform:translateY(-2px)}
+
+/* ===== Navbar ===== */
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 40px;
+  transition:all .3s ease;
+}
+
+nav.shrink{
+  padding:10px 40px;
+  background:rgba(0,0,0,0.85);
+}
+
+nav .logo img{
+  height:80px;
+  width:auto;
+  display:block;
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:30px;
+}
+
+nav ul li a{
+  font-size:1.1rem;
+  transition:color .3s;
+  color: white;
+}
+
+nav ul li a:hover{
+  color:#00aaff;
+}
+
+.menu-toggle{
+  display:none;
+  font-size:1.6rem;
+  cursor:pointer;
+  color:#fff;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  nav ul{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,0.95);
+    flex-direction:column;
+    align-items:center;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .3s ease;
+  }
+
+  nav ul.show{
+    max-height:300px;
+    padding:20px 0;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .logo img{
+    content:url("images/1nestep2.png");
+    height:32px;
+  }
+}
+
+/* ===== Hero ===== */
+.tech-hero{
+  min-height:95vh;
+  display:flex;
+  align-items:center;
+
+  /* top right/left bottom */
+  padding:160px 10% 90px;
+
+  background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+    url("images/technology-hero.png") center/cover no-repeat;
+}
+
+
+
+
+.tech-hero-inner{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:60px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.tech-hero h1{
+  font-size:3.2rem;
+  margin-bottom:18px;
+}
+
+.tech-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:25px;
+}
+
+.tech-tag{
+  padding:8px 14px;
+  border-radius:20px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.12);
+  font-size:.85rem;
+}
+/* ===== Animated Tech Icons ===== */
+.tech-icons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:22px;
+  margin-top:40px;
+}
+
+.tech-icon{
+  width:90px;
+  height:90px;
+  border-radius:20px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  font-size:30px;
+  cursor:default;
+
+  animation:float 4s ease-in-out infinite;
+  transition:.3s;
+  box-shadow:0 10px 25px rgba(0,0,0,.4);
+}
+
+.tech-icon span{
+  font-size:.75rem;
+  color:#ccc;
+  margin-top:6px;
+}
+
+/* Hover Effect */
+.tech-icon:hover{
+  transform:translateY(-6px) scale(1.05);
+  box-shadow:0 0 30px rgba(0,170,255,.35);
+  border-color:#00aaff;
+}
+
+/* Floating Animation */
+@keyframes float{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}
+
+/* Stagger Animation */
+.tech-icon:nth-child(2){animation-delay:.5s}
+.tech-icon:nth-child(3){animation-delay:1s}
+.tech-icon:nth-child(4){animation-delay:1.5s}
+.tech-icon:nth-child(5){animation-delay:2s}
+.tech-icon:nth-child(6){animation-delay:2.5s}
+
+/* Mobile */
+@media(max-width:900px){
+  .tech-icons{
+    justify-content:center;
+  }
+}
+
+
+/* ===== Tech Stack ===== */
+/* ===== Tech Stack ===== */
+.tech-stack{
+  padding:90px 10%;
+}
+.tech-hero{
+  position:relative;
+}
+
+.tech-stack h2{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.tech-subtitle{
+  text-align:center;
+  max-width:600px;
+  margin:0 auto 55px;
+  color:#aaa;
+  font-size:1rem;
+}
+
+.stack-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:32px;
+}
+
+/* Card */
+.stack-card{
+  background:linear-gradient(
+    180deg,
+    rgba(255,255,255,.06),
+    rgba(255,255,255,.02)
+  );
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:22px;
+  padding:32px;
+  transition:.35s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+/* Glow effect */
+.stack-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(
+    circle at top left,
+    rgba(0,170,255,.15),
+    transparent 60%
+  );
+  opacity:0;
+  transition:.35s;
+}
+
+.stack-card:hover::before{
+  opacity:1;
+}
+
+.stack-card:hover{
+  transform:translateY(-10px);
+  border-color:#00aaff;
+  box-shadow:0 25px 60px rgba(0,0,0,.55);
+}
+
+/* Header */
+.stack-header{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.stack-icon{
+  font-size:30px;
+  background:rgba(0,170,255,.12);
+  color:#00aaff;
+  padding:10px;
+  border-radius:14px;
+}
+
+.stack-card h3{
+  font-size:1.25rem;
+}
+
+/* List */
+.stack-card ul{
+  list-style:none;
+  margin-top:12px;
+}
+
+.stack-card li{
+  padding-left:22px;
+  margin-bottom:10px;
+  color:#ddd;
+  font-size:.95rem;
+  position:relative;
+}
+
+/* Custom bullet */
+.stack-card li::before{
+  content:"✔";
+  position:absolute;
+  left:0;
+  color:#00aaff;
+  font-size:.8rem;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .tech-stack{
+    padding:70px 6%;
+  }
+}
+
+
+/* ===== Process Timeline ===== */
+/* ===== Technology Process ===== */
+.tech-process{
+  padding:90px 10%;
+  background:#070707;
+  position:relative;
+}
+
+.tech-process h2{
+  text-align:center;
+  margin-bottom:10px;
+}
+
+.process-subtitle{
+  text-align:center;
+  max-width:640px;
+  margin:0 auto 60px;
+  color:#aaa;
+  font-size:1rem;
+}
+
+/* Timeline container */
+.timeline{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
+  position:relative;
+}
+
+
+/* Timeline step */
+.timeline-step{
+  background:linear-gradient(
+    180deg,
+    rgba(255,255,255,.06),
+    rgba(255,255,255,.02)
+  );
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:22px;
+  padding:34px 28px;
+  position:relative;
+  transition:.35s ease;
+}
+
+/* Step number */
+.step-no{
+  display:inline-block;
+  font-size:.75rem;
+  font-weight:700;
+  letter-spacing:.08em;
+  color:#00aaff;
+  background:rgba(0,170,255,.12);
+  padding:6px 12px;
+  border-radius:20px;
+  margin-bottom:14px;
+}
+
+/* Hover */
+.timeline-step:hover{
+  transform:translateY(-10px);
+  border-color:#00aaff;
+  box-shadow:0 25px 60px rgba(0,0,0,.55);
+}
+
+/* Text */
+.timeline-step h3{
+  margin-bottom:12px;
+  font-size:1.25rem;
+}
+
+.timeline-step p{
+  color:#d0d0d0;
+  font-size:.95rem;
+  line-height:1.6;
+}
+
+/* Mobile */
+@media(max-width:768px){
+  .tech-process{
+    padding:70px 6%;
+  }
+}
+
+/* ===== CTA ===== */
+.tech-cta{
+  padding:90px 10%;
+  text-align:center;
+  background:linear-gradient(135deg,#001a2d,#000);
+}
+
+.tech-cta h2{
+  margin-bottom:15px;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:900px){
+  .tech-hero-inner{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+}
+/* Headings */
+.tech-hero h1{
+  font-size:3.8rem;   /* was ~3.2rem */
+  line-height:1.15;
+}
+
+.tech-stack h2,
+.tech-process h2,
+.tech-cta h2{
+  font-size:2.6rem;
+}
+
+/* Paragraphs */
+.tech-hero p{
+  font-size:1.15rem;
+  line-height:1.75;
+}
+
+.tech-subtitle,
+.process-subtitle{
+  font-size:1.05rem;
+  line-height:1.7;
+}
+
+/* Cards text */
+.stack-card h3,
+.timeline-step h3{
+  font-size:1.35rem;
+}
+
+.stack-card li,
+.timeline-step p{
+  font-size:1rem;
+  line-height:1.65;
+}
+
+/* Buttons */
+button{
+  font-size:1.05rem;
+}
+
+</style>
+</head>
+
+<body>
+    <!-- ===== Navbar ===== -->
+<nav id="navbar">
+  <div class="logo">
+    <img src="images/1nestep.png" alt="1nestep Logo">
+  </div>
+
+  <div class="menu-toggle">&#9776;</div>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="index.html#explore">Explore</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#enroll">Enroll</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+</nav>
+
+
+<!-- HERO -->
+<section class="tech-hero">
+  <div class="tech-hero-inner">
+
+    <div>
+      <h1>Technology Built for Scale, Speed & Security</h1>
+<p>
+  We don’t just use modern technologies — we engineer robust,
+  scalable systems that are designed to grow with your business.
+  Every technology decision is made with performance, security,
+  and long-term maintainability in mind.
+</p>
+
+      <!-- Animated Tech Icons -->
+<div class="tech-icons">
+
+  <div class="tech-icon">⚛️<span>React</span></div>
+  <div class="tech-icon">🐍<span>Python</span></div>
+  <div class="tech-icon">☁️<span>AWS</span></div>
+  <div class="tech-icon">🐳<span>Docker</span></div>
+  <div class="tech-icon">🤖<span>AI</span></div>
+  <div class="tech-icon">📱<span>Flutter</span></div>
+
+</div>
+
+    </div>
+
+    <div>
+      <p>
+  Our technology choices are driven by real product requirements,
+  not hype or trends. This ensures your platform remains reliable,
+  adaptable, and easy to evolve as your users and business scale.
+</p>
+        
+      <br>
+      <button onclick="location.href='index.html#contact'">
+        Discuss Your Tech Stack
+      </button>
+    </div>
+
+  </div>
+</section>
+
+<!-- TECHNOLOGY STACK -->
+<section class="tech-stack">
+  <h2>Technologies We Work With</h2>
+  <p class="tech-subtitle">
+    Battle-tested tools and frameworks we use to build scalable, future-ready products.
+  </p>
+
+  <div class="stack-grid">
+
+    <div class="stack-card">
+      <div class="stack-header">
+        <span class="stack-icon">🎨</span>
+        <h3>Frontend</h3>
+      </div>
+      <ul>
+        <li>React / Next.js</li>
+        <li>Flutter / React Native</li>
+        <li>HTML5, CSS3, Tailwind</li>
+      </ul>
+    </div>
+
+    <div class="stack-card">
+      <div class="stack-header">
+        <span class="stack-icon">⚙️</span>
+        <h3>Backend</h3>
+      </div>
+      <ul>
+        <li>Node.js / Express</li>
+        <li>Python (FastAPI, Flask)</li>
+        <li>REST & GraphQL APIs</li>
+      </ul>
+    </div>
+
+    <div class="stack-card">
+      <div class="stack-header">
+        <span class="stack-icon">☁️</span>
+        <h3>Cloud & DevOps</h3>
+      </div>
+      <ul>
+        <li>AWS / Azure / GCP</li>
+        <li>Docker & Kubernetes</li>
+        <li>CI/CD Pipelines</li>
+      </ul>
+    </div>
+
+    <div class="stack-card">
+      <div class="stack-header">
+        <span class="stack-icon">🧠</span>
+        <h3>Data & AI</h3>
+      </div>
+      <ul>
+        <li>Machine Learning</li>
+        <li>Data Pipelines</li>
+        <li>AI Integrations</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PROCESS -->
+<section class="tech-process">
+  <h2>How We Use Technology</h2>
+  <p class="process-subtitle">
+    A structured, engineering-first approach that ensures performance,
+    security, and long-term scalability.
+  </p>
+
+  <div class="timeline">
+
+    <div class="timeline-step">
+      <span class="step-no">01</span>
+      <h3>Architecture Design</h3>
+      <p>
+        We design system architecture with scalability, security,
+        and future expansion in mind — avoiding costly rework later.
+      </p>
+    </div>
+
+    <div class="timeline-step">
+      <span class="step-no">02</span>
+      <h3>Technology Selection</h3>
+      <p>
+        Frameworks and tools are chosen based on product goals,
+        team efficiency, and long-term maintainability — not trends.
+      </p>
+    </div>
+
+    <div class="timeline-step">
+      <span class="step-no">03</span>
+      <h3>Development & Integration</h3>
+      <p>
+        Clean, modular, and production-ready code with seamless
+        API integrations and performance optimization.
+      </p>
+    </div>
+
+    <div class="timeline-step">
+      <span class="step-no">04</span>
+      <h3>Optimization & Scaling</h3>
+      <p>
+        Continuous performance tuning, security hardening,
+        and infrastructure scaling as usage grows.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="tech-cta">
+  <h2>Need the Right Technology Foundation?</h2>
+  <p><p>
+  Let’s design a technology foundation that supports your
+  product today and scales confidently for tomorrow.
+</p>
+</p>
+  <br>
+  <button onclick="location.href='index.html#contact'">
+    Book Free Consultation
+  </button>
+</section>
+<script>
+const navbar = document.getElementById('navbar');
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('nav ul');
+
+/* Shrink on scroll */
+window.addEventListener('scroll', () => {
+  window.scrollY > 50
+    ? navbar.classList.add('shrink')
+    : navbar.classList.remove('shrink');
+});
+
+/* Mobile menu */
+toggle.addEventListener('click', () => {
+  menu.classList.toggle('show');
+});
+</script>
+
+</body>
+</html>

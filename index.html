@@ -45,6 +45,18 @@
     nav ul li a:hover{color:#00aaff}
     .menu-toggle{display:none;font-size:1.6rem;cursor:pointer}
 
+    .logo img {
+  height: 80px;      /* adjust as needed */
+  width: auto;
+  display: block;
+}
+@media (max-width:768px){
+  .logo img{
+    content: url("images/1nestep2.png");
+    height:32px;
+  }
+}
+
     /* ===== Hero ===== */
     header{
       height:100vh;
@@ -103,8 +115,24 @@
     .socials a:hover{color:#00aaff}
 
     /* ===== Reveal Animation ===== */
-    .reveal{opacity:0;transform:translateY(40px);transition:all .2s ease}
-    .reveal.active{opacity:1;transform:translateY(0)}
+    /* ===== HERO LOAD REVEAL ===== */
+.hero-reveal{
+  opacity: 0;
+  transform: translateY(40px);
+  animation: heroFadeUp 0.8s ease forwards;
+}
+
+.hero-reveal.delay-1{ animation-delay: 0.2s; }
+.hero-reveal.delay-2{ animation-delay: 0.4s; }
+.hero-reveal.delay-3{ animation-delay: 0.6s; }
+
+@keyframes heroFadeUp{
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
     /* ===== Responsive ===== */
     @media(max-width:768px){
@@ -690,6 +718,262 @@ body.modal-open header{
     font-size: 0.95rem;
   }
 }
+/* =========================
+   SOLID GREY MEGA FOOTER
+   ========================= */
+.mega-footer{
+  background:#2f2f2f;          /* solid grey */
+  color:#ffffff;
+  padding:80px 30px 30px;
+}
+
+/* Layout */
+.footer-top{
+  max-width:1300px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1fr 1fr;
+  gap:50px;
+}
+
+/* =========================
+   BRAND
+   ========================= */
+.footer-brand img{
+  height:42px;
+  margin-bottom:16px;
+}
+
+.footer-brand p{
+  font-size:0.95rem;
+  line-height:1.7;
+  color:#e6e6e6;
+}
+
+/* =========================
+   SOCIAL ICONS
+   ========================= */
+.footer-socials{
+  display:flex;
+  gap:14px;
+  margin-top:18px;
+}
+
+.footer-socials a{
+  color:#ffffff;
+  font-size:1.2rem;
+  transition:0.25s ease;
+}
+
+.footer-socials a:hover{
+  color:#00aaff;
+  transform:translateY(-3px);
+}
+
+/* =========================
+   COLUMNS
+   ========================= */
+.footer-col h4{
+  font-size:1.05rem;
+  margin-bottom:16px;
+  color:#ffffff;
+}
+
+.footer-col a{
+  display:block;
+  margin-bottom:10px;
+  font-size:0.95rem;
+  color:#e6e6e6;
+  transition:0.25s ease;
+}
+
+.footer-col a:hover{
+  color:#00aaff;
+  transform:translateX(4px);
+}
+
+/* =========================
+   CTA PANEL
+   ========================= */
+.footer-cta h3{
+  font-size:1.6rem;
+  font-weight:700;
+  margin-bottom:18px;
+  color:#ffffff;
+}
+
+.cta-link{
+  display:block;
+  margin-bottom:12px;
+  font-size:1rem;
+  font-weight:600;
+  color:#ffffff;
+}
+
+.cta-link:hover{
+  color:#00aaff;
+}
+
+/* =========================
+   NEWSLETTER
+   ========================= */
+.newsletter p{
+  margin:20px 0 10px;
+  font-weight:600;
+  color:#ffffff;
+}
+
+.newsletter-box{
+  display:flex;
+  border-radius:8px;
+  overflow:hidden;
+  background:#1f1f1f;
+}
+
+.newsletter-box input{
+  flex:1;
+  border:none;
+  padding:12px;
+  font-size:0.95rem;
+  outline:none;
+  background:#1f1f1f;
+  color:#ffffff;
+}
+
+.newsletter-box input::placeholder{
+  color:#bdbdbd;
+}
+
+.newsletter-box button{
+  background:#00aaff;
+  color:#ffffff;
+  border:none;
+  padding:0 18px;
+  font-size:1.1rem;
+  cursor:pointer;
+}
+
+/* =========================
+   BOTTOM BAR
+   ========================= */
+.footer-bottom{
+  margin-top:50px;
+  padding-top:15px;
+  border-top:1px solid #444;
+  text-align:center;
+  font-size:0.85rem;
+  color:#cccccc;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+   ========================= */
+@media (max-width:900px){
+  .footer-top{
+    grid-template-columns:1fr;
+    gap:40px;
+    text-align:center;
+  }
+
+  .footer-socials{
+    justify-content:center;
+  }
+}
+.mega-footer{
+  pointer-events:auto;
+}
+
+#particles-js{
+  pointer-events:none;
+}
+.mega-footer{
+  position:relative;
+  z-index:2;
+  background:#2f2f2f;
+}
+
+.testimonials-section {
+  padding: 90px 20px;
+  text-align: center;
+}
+
+.testimonials-section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #aaa;
+  max-width: 720px;
+  margin: 0 auto 50px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 18px;
+  padding: 20px;
+  text-align: left;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform .3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Top row */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.company-logo {
+  height: 28px;
+  max-width: 100px;
+  object-fit: contain;
+}
+
+.rating {
+  color: #ffcc00;
+  font-size: 0.9rem;
+}
+
+/* Work image */
+.work-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Feedback */
+.feedback {
+  font-size: 0.95rem;
+  color: #ddd;
+  margin-bottom: 15px;
+}
+
+.testimonial-card h4 {
+  margin: 0;
+  color: #00aaff;
+}
+
+.testimonial-card span {
+  font-size: 0.85rem;
+  color: #999;
+}
 
 
 
@@ -700,14 +984,17 @@ body.modal-open header{
 
   <!-- Navbar -->
   <nav id="navbar">
-    <div class="logo">1nestep</div>
+    <div class="logo">
+  <img src="images/1nestep.png" alt="">
+</div>
+
     <div class="menu-toggle">&#9776;</div>
     <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#explore">Explore</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#enroll">Enroll</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">Explore</a></li>
+      <li><a href="index.html">Services</a></li>
+      <li><a href="index.html">Enroll</a></li>
+      <li><a href="index.html">Contact</a></li>
     </ul>
   </nav>
 
@@ -717,7 +1004,7 @@ body.modal-open header{
   <!-- LEFT: Hero Content -->
   <div class="hero-content">
     <h1 class="reveal" style="color:#00aaff">
-      Welcome to 1nestep. We build
+      Welcome to 1nestep.in  We build
       <span id="typewriter" style="color:#ffffff;"></span>
     </h1>
 
@@ -753,7 +1040,10 @@ body.modal-open header{
       </div>
       <h4>Web Development</h4>
       <p>Fast, scalable, modern websites.</p>
-      <button onclick="openModal('web-modal')">Learn More</button>
+      <button onclick="window.location.href='web-dev.html'">
+  Learn More
+</button>
+
 
     </div>
 
@@ -768,7 +1058,7 @@ body.modal-open header{
       </div>
       <h4>Mobile Apps</h4>
       <p>High-performance Android & iOS apps.</p>
-      <button onclick="openModal('mobile-modal')">Learn More</button>
+      <button onclick="window.location.href='mobile-dev.html'">Learn More</button>
 
     </div>
 
@@ -785,7 +1075,7 @@ body.modal-open header{
       </div>
       <h4>AI Solutions</h4>
       <p>Automation & intelligent systems.</p>
-      <button onclick="openModal('ai-modal')">Learn More</button>
+      <button onclick="window.location.href='ai-solutions.html'">Learn More</button>
 
     </div>
 
@@ -799,7 +1089,7 @@ body.modal-open header{
       </div>
       <h4>SaaS Platforms</h4>
       <p>End-to-end SaaS product development.</p>
-     <button onclick="openModal('saas-modal')">Learn More</button>
+     <button onclick="window.location.href='saas-platforms.html'">Learn More</button>
     </div>
 
   </div>
@@ -829,7 +1119,7 @@ body.modal-open header{
         We help startups turn ideas into scalable digital products —
         from MVPs to full-scale platforms.
       </p>
-      <button onclick="openModal('innovation-modal')">Know More</button>
+      <button onclick="window.location.href='innovation.html'">Know More</button>
     </div>
 
     <!-- Technology -->
@@ -851,7 +1141,7 @@ body.modal-open header{
     startup growth and reliability.
   </p>
 
-  <button onclick="openModal('technology-modal')">Know More</button>
+  <button onclick="window.location.href='technology.html'">Know More</button>
 </div>
 
 
@@ -887,7 +1177,71 @@ body.modal-open header{
       <p>
         Dedicated post-launch support to keep your product stable and evolving.
       </p>
-      <button onclick="openModal('support-modal')">Learn More</button>
+      <button onclick="window.location.href='support.html'">Learn More</button>
+    </div>
+
+  </div>
+</section>
+<section class="testimonials-section">
+  <h2>Trusted by Pre-Registered Companies</h2>
+  <p class="subtitle">
+    Early feedback from startups who reviewed our work and approach.
+  </p>
+
+  <div class="testimonials-grid">
+
+    <!-- Card 1 -->
+    <div class="testimonial-card">
+      <div class="card-top">
+        <img src="images/logos/nexacloud.png" class="company-logo" alt="NexaCloud">
+        <div class="rating">★★★★★</div>
+      </div>
+
+      <img src="images/work/saas-dashboard.jpg" class="work-image" alt="SaaS Dashboard">
+
+      <p class="feedback">
+        “Their SaaS architecture planning and UI execution gave us confidence
+        even before development began.”
+      </p>
+
+      <h4>NexaCloud</h4>
+      <span>SaaS Startup</span>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="testimonial-card">
+      <div class="card-top">
+        <img src="images/logos/learnaxis.png" class="company-logo" alt="LearnAxis">
+        <div class="rating">★★★★☆</div>
+      </div>
+
+      <img src="images/work/edtech-platform.jpg" class="work-image" alt="EdTech Platform">
+
+      <p class="feedback">
+        “Clear technical roadmap and scalable system design.
+        Their pre-registration consultation was highly valuable.”
+      </p>
+
+      <h4>LearnAxis</h4>
+      <span>EdTech Company</span>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="testimonial-card">
+      <div class="card-top">
+        <img src="images/logos/paynest.png" class="company-logo" alt="PayNest">
+        <div class="rating">★★★★★</div>
+      </div>
+
+      <img src="images/work/fintech-app.jpg" class="work-image" alt="FinTech App">
+
+      <p class="feedback">
+        “Security-first thinking and strong backend architecture.
+        It felt more like a partnership than a service.”
+      </p>
+
+      <h4>PayNest</h4>
+      <span>FinTech Startup</span>
     </div>
 
   </div>
@@ -918,14 +1272,91 @@ body.modal-open header{
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 1nestep & Co. Software Solutions. All Rights Reserved.</p>
-    <div class="socials">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
+ <footer id="site-footer" class="mega-footer">
+
+  <div class="footer-top">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <img src="images/1nestep.png" alt="1nestep Logo">
+      <p>
+        Built with ❤️ in India for the world.  
+        We help startups build scalable, future-ready tech.
+      </p>
+
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-telegram-plane"></i></a>
+        <a href="#"><i class="fab fa-discord"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
     </div>
-  </footer>
+
+    <!-- Column 1 -->
+    <div class="footer-col">
+      <h4>Products</h4>
+      <a href="#">Web Development</a>
+      <a href="#">Mobile Apps</a>
+      <a href="#">AI Solutions</a>
+      <a href="#">SaaS Platforms</a>
+      <a href="#">Automation</a>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <a href="#">Startup MVP</a>
+      <a href="#">UI/UX Design</a>
+      <a href="#">Cloud & DevOps</a>
+      <a href="#">System Architecture</a>
+      <a href="#">Maintenance</a>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h4>Learn</h4>
+      <a href="#">Articles</a>
+      <a href="#">Case Studies</a>
+      <a href="#">Tech Blogs</a>
+      <a href="#">Workshops</a>
+    </div>
+
+    <!-- Column 4 -->
+    <div class="footer-col">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Careers</a>
+      <a href="#">Life at 1nestep</a>
+      <a href="#">FAQs</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <!-- CTA Panel -->
+    <div class="footer-cta">
+      <h3>We’re Hiring 🚀</h3>
+      <a href="#" class="cta-link">Contact Us ↗</a>
+      <a href="#" class="cta-link">Share Your Startup Idea ↗</a>
+
+      <div class="newsletter">
+        <p>Stay Updated</p>
+        <div class="newsletter-box">
+          <input type="email" placeholder="Subscribe to our newsletter">
+          <button>➤</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <p>© 2025 1nestep & Co. All Rights Reserved.</p>
+  </div>
+</footer>
+
   <!-- Consultation Popup -->
 <div id="consultation-modal" class="modal-overlay">
   <div class="modal-box reveal">
@@ -951,237 +1382,6 @@ body.modal-open header{
 
   </div>
 </div>
-<!-- Innovation Popup -->
-<div id="innovation-modal" class="modal-overlay">
-  <div class="modal-box tech-modal">
-
-    <span class="close-btn" onclick="closeModal('innovation-modal')">&times;</span>
-
-    <h2>Innovation for Startups</h2>
-
-    <p class="modal-description">
-      We help startups transform ideas into scalable, market-ready digital
-      products through innovation-driven engineering and rapid execution.
-    </p>
-
-    <ul class="feature-list">
-      <li>✔ MVP & Prototype Development</li>
-      <li>✔ Product Architecture & System Design</li>
-      <li>✔ Startup-Focused UX/UI Strategy</li>
-      <li>✔ Rapid Iteration & Market Validation</li>
-      <li>✔ Tech-Led Growth Roadmapping</li>
-    </ul>
-
-    <button class="modal-cta"
-      onclick="openModal('consultation-modal'); closeModal('innovation-modal')">
-      Validate My Idea
-    </button>
-
-  </div>
-</div>
-
-<!-- Technology Popup -->
-<!-- Technology Popup -->
-<div id="technology-modal" class="modal-overlay">
-  <div class="modal-box tech-modal">
-
-    <span class="close-btn" onclick="closeModal('technology-modal')">&times;</span>
-
-    <h2>Startup-Ready Technology Stack</h2>
-
-    <p class="modal-description">
-      We design and optimize modern technology stacks that help startups scale
-      efficiently, securely, and sustainably without technical debt.
-    </p>
-
-    <ul class="feature-list">
-      <li>✔ Modern Frontend & Backend Development</li>
-      <li>✔ Scalable Cloud Architecture (AWS / GCP / Azure)</li>
-      <li>✔ API-First System Integrations</li>
-      <li>✔ Performance, Security & Cost Optimization</li>
-      <li>✔ Maintainable & Future-Ready Codebase</li>
-    </ul>
-
-    <button class="modal-cta"
-      onclick="openModal('consultation-modal'); closeModal('technology-modal')">
-      Design My Tech Stack
-    </button>
-
-  </div>
-</div>
-
-
-<!-- Support Popup -->
-<!-- SLA Popup -->
-<div id="sla-modal" class="modal-overlay">
-  <div class="modal-box tech-modal">
-
-    <span class="close-btn" onclick="closeModal('sla-modal')">&times;</span>
-
-    <h2>Service Level Agreement (SLA)</h2>
-
-    <p class="modal-description">
-      Our SLA ensures transparency, accountability, and reliable support
-      throughout your product’s lifecycle.
-    </p>
-
-    <ul class="feature-list">
-      <li>✔ Response Time within 24 Business Hours</li>
-      <li>✔ Critical Issue Resolution: 4–8 Hours</li>
-      <li>✔ Minor Issue Resolution: 1–2 Business Days</li>
-      <li>✔ Email & Priority WhatsApp Support</li>
-      <li>✔ Continuous Monitoring & Maintenance</li>
-    </ul>
-
-    <button class="modal-cta"
-      onclick="openModal('consultation-modal'); closeModal('sla-modal')">
-      Discuss SLA Details
-    </button>
-
-  </div>
-</div>
-
-
-<div id="web-modal" class="modal-overlay">
-  <div class="modal-box tech-modal">
-
-    <span class="close-btn" onclick="closeModal('web-modal')">&times;</span>
-
-    <h2>Web Development</h2>
-
-    <p class="modal-description">
-      We build fast, scalable, and secure web applications tailored for startups.
-    </p>
-
-    <ul class="feature-list">
-      <li>✔ MVP & Startup Websites</li>
-      <li>✔ Frontend & Backend Development</li>
-      <li>✔ API & Database Integration</li>
-      <li>✔ Performance & SEO Optimization</li>
-      <li>✔ Scalable Architecture</li>
-    </ul>
-
-    <button class="modal-cta"
-      onclick="openModal('consultation-modal'); closeModal('web-modal')">
-      Discuss Web Project
-    </button>
-
-  </div>
-</div>
-
-<div id="mobile-modal" class="modal-overlay">
-  <div class="modal-box tech-modal">
-
-    <span class="close-btn" onclick="closeModal('mobile-modal')">&times;</span>
-
-    <h2>Mobile App Development</h2>
-
-    <p class="modal-description">
-      We design and build high-performance mobile applications that deliver
-      seamless user experiences across Android and iOS platforms.
-    </p>
-
-    <ul class="feature-list">
-      <li>✔ Native Android & iOS Development</li>
-      <li>✔ Cross-Platform Apps (Flutter / React Native)</li>
-      <li>✔ UI/UX Design & Prototyping</li>
-      <li>✔ API & Backend Integration</li>
-      <li>✔ App Store Deployment & Maintenance</li>
-    </ul>
-
-    <button class="modal-cta"
-      onclick="openModal('consultation-modal'); closeModal('mobile-modal')">
-      Build My Mobile App
-    </button>
-
-  </div>
-</div>
-
-<div id="ai-modal" class="modal-overlay">
-  <div class="modal-box tech-modal">
-
-    <span class="close-btn" onclick="closeModal('ai-modal')">&times;</span>
-
-    <h2>AI & Automation Solutions</h2>
-
-    <p class="modal-description">
-      We help startups leverage artificial intelligence to automate workflows,
-      analyze data, and create intelligent digital products.
-    </p>
-
-    <ul class="feature-list">
-      <li>✔ AI-Powered Web & Mobile Applications</li>
-      <li>✔ Chatbots & Virtual Assistants</li>
-      <li>✔ Data Analytics & Predictive Insights</li>
-      <li>✔ Process Automation & Optimization</li>
-      <li>✔ Custom Machine Learning Models</li>
-    </ul>
-
-    <button class="modal-cta"
-      onclick="openModal('consultation-modal'); closeModal('ai-modal')">
-      Explore AI Solutions
-    </button>
-
-  </div>
-</div>
-
-<div id="saas-modal" class="modal-overlay">
-  <div class="modal-box tech-modal">
-
-    <span class="close-btn" onclick="closeModal('saas-modal')">&times;</span>
-
-    <h2>SaaS Platform Development</h2>
-
-    <p class="modal-description">
-      We build scalable, secure, and high-performance SaaS platforms
-      designed for growth, subscriptions, and long-term success.
-    </p>
-
-    <ul class="feature-list">
-      <li>✔ Multi-tenant SaaS architecture</li>
-      <li>✔ Subscription & payment integration</li>
-      <li>✔ Admin dashboards & analytics</li>
-      <li>✔ Cloud deployment & scalability</li>
-      <li>✔ Security & performance optimization</li>
-    </ul>
-
-    <button class="modal-cta"
-      onclick="openModal('consultation-modal'); closeModal('saas-modal')">
-      Build My SaaS Product
-    </button>
-
-  </div>
-</div>
-<div id="support-modal" class="modal-overlay">
-  <div class="modal-box tech-modal">
-
-    <span class="close-btn" onclick="closeModal('support-modal')">&times;</span>
-
-    <h2>Product Support & Maintenance</h2>
-
-    <p class="modal-description">
-      We act as your extended tech team — ensuring stability,
-      performance, updates, and continuous improvements.
-    </p>
-
-    <ul class="feature-list">
-      <li>✔ Bug fixes & issue resolution</li>
-      <li>✔ Performance monitoring</li>
-      <li>✔ Regular updates & security patches</li>
-      <li>✔ Scaling & optimization guidance</li>
-      <li>✔ Dedicated technical support</li>
-    </ul>
-
-    <button class="modal-cta"
-      onclick="openModal('consultation-modal'); closeModal('support-modal')">
-      Talk to Support Experts
-    </button>
-
-  </div>
-</div>
-
-
-
 
 
   <!-- Scripts -->
@@ -1196,17 +1396,7 @@ body.modal-open header{
     const menu=document.querySelector('nav ul');
     toggle.addEventListener('click',()=>menu.classList.toggle('show'));
 
-    // Reveal animation
-    const reveals=document.querySelectorAll('.reveal');
-    window.addEventListener('scroll',()=>{
-      reveals.forEach((el,idx)=>{
-        const top=el.getBoundingClientRect().top;
-        if(top<window.innerHeight-50){
-          setTimeout(()=>el.classList.add('active'),idx*150);
-        }
-      });
-    });
-
+    
    /* Particles.js config - uniform blue */
     particlesJS("particles-js", {
       "particles": {
@@ -1229,6 +1419,33 @@ body.modal-open header{
       }
     });
   </script>
+ <script>
+const footer = document.getElementById("site-footer");
+
+/* Access particles instance */
+function setParticlesOpacity(value){
+  if (window.pJSDom && window.pJSDom.length) {
+    const pJS = window.pJSDom[0].pJS;
+    pJS.particles.opacity.value = value;
+    pJS.particles.line_linked.opacity = value;
+  }
+}
+
+/* Observe footer */
+const observer = new IntersectionObserver(
+  ([entry]) => {
+    if (entry.isIntersecting) {
+      setParticlesOpacity(0);   // footer → invisible
+    } else {
+      setParticlesOpacity(0.5); // rest of site → visible
+    }
+  },
+  { threshold: 0.1 }
+);
+
+observer.observe(footer);
+</script>
+
   <script>
   function openConsultation(){
   document.getElementById("consultation-modal").style.display = "flex";
@@ -1291,11 +1508,6 @@ typeEffect();
 document.querySelectorAll('.service-card').forEach((card, i) => {
   card.style.transitionDelay = `${i * 120}ms`;
 });
-</script><script>
-.highlight-tech:hover{
-  transform:translateY(-10px);
-  box-shadow:0 25px 60px rgba(0,170,255,0.35);
-}
 </script>
 <script>
 function openModal(id){
@@ -1331,16 +1543,7 @@ async function submitConsultation(e){
     problem: f[4].value
   };
 
-  await fetch("http://localhost:5000/consultation", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  });
 
-  alert("Saved successfully!");
-  f.reset();
-  closeConsultation();
-}
 </script>
 
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
